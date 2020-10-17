@@ -12,3 +12,9 @@ Presentation Outline (10 min)
 2. Review common bugs
 3. Squash those bugs
 4. Solve these errors
+
+
+
+This app was built with
+- React CRA
+- [Carbon Design system](https://www.carbondesignsystem.com/developing/react-tutorial/step-1/)

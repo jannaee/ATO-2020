@@ -1,27 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './app.scss';
+import ReactDOM from 'react-dom';
 import {Button} from 'carbon-components-react';
+import './app.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button>Learn React</Button>
-        </a>
-      </header>
+    <div>
+      <Button>Hello</Button>
     </div>
   );
 }
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
 
 export default App;

@@ -9,7 +9,6 @@ function App () {
     <>
       <Grid
         className='testingForm'>
-        <h1>Simple form for testing</h1>
         <ATOForm />
       </Grid>
     </>

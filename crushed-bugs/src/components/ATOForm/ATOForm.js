@@ -1,4 +1,9 @@
-import { Form, TextArea, TextInput, Select, SelectItem, Button } from 'carbon-components-react';
+import { 
+    Form, 
+    TextArea, 
+    TextInput, 
+    Select, 
+    Button } from 'carbon-components-react';
 import React from 'react';
 
 const ATOForm = () => {
@@ -30,18 +35,6 @@ const ATOForm = () => {
                     invalidText="This is an invalid error message."
                     labelText="Dropdown"
                 >
-                    <SelectItem
-                        text="Option 1"
-                        value="option-1"
-                    />
-                    <SelectItem
-                        text="Option 2"
-                        value="option-2"
-                    />
-                    <SelectItem
-                        text="Option 3"
-                        value="option-3"
-                    />
                 </Select>
             </div>
             <Button

@@ -3,7 +3,7 @@ import React from 'react';
 
 const ATOForm = () => {
     return (
-        <Form>
+        <Form className="someForm">
             <div style={{ marginBottom: '2rem' }}>
                 <TextInput
                     id="test2"

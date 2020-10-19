@@ -1,9 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ATOForm title should render the ATOForm Component correctly 1`] = `
+exports[`<ATOForm /> rendering should render 1 form   1`] = `
 <Form
   className="someForm"
 >
+  <h4
+    className="title"
+  >
+    Our Test Subject
+  </h4>
   <div
     style={
       Object {
@@ -28,76 +33,5 @@ exports[`ATOForm title should render the ATOForm Component correctly 1`] = `
       warnText=""
     />
   </div>
-  <div
-    style={
-      Object {
-        "marginBottom": "2rem",
-      }
-    }
-  >
-    <TextArea
-      cols={50}
-      disabled={false}
-      helperText=""
-      id="test5"
-      invalid={false}
-      invalidText="Invalid error message."
-      labelText="Second input field"
-      light={false}
-      onChange={[Function]}
-      onClick={[Function]}
-      placeholder="Placeholder text"
-      rows={4}
-    />
-  </div>
-  <div
-    style={
-      Object {
-        "marginBottom": "2rem",
-      }
-    }
-  >
-    <Select
-      defaultValue="placeholder-item"
-      disabled={false}
-      helperText=""
-      id="select-1"
-      inline={false}
-      invalid={false}
-      invalidText="This is an invalid error message."
-      labelText="Dropdown"
-      light={false}
-    >
-      <SelectItem
-        disabled={false}
-        hidden={false}
-        text="Option 1"
-        value="option-1"
-      />
-      <SelectItem
-        disabled={false}
-        hidden={false}
-        text="Option 2"
-        value="option-2"
-      />
-      <SelectItem
-        disabled={false}
-        hidden={false}
-        text="Option 3"
-        value="option-3"
-      />
-    </Select>
-  </div>
-  <Button
-    disabled={false}
-    kind="primary"
-    size="default"
-    tabIndex={0}
-    tooltipAlignment="center"
-    tooltipPosition="top"
-    type="submit"
-  >
-     Submit
-  </Button>
 </Form>
 `;

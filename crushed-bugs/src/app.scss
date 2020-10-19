@@ -1,12 +1,9 @@
 @import './components/ATOForm/ato-form.scss';
+@import './components/Launch/Launch.scss';
 
-h1 {
-    margin-bottom: 2rem;
-}
 
 .testingForm {
     margin: 10% auto;
-    width: 40vw;
-    max-width: 600px;
+    width: 60vw;
     min-width: 200px;
 }

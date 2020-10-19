@@ -6,7 +6,9 @@
 .pnp.js
 
 # testing
-/reports
+# Usually I would add this to the list
+# But for demo sake it will stay :)
+# /reports
 
 # production
 /build

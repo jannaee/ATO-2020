@@ -28,7 +28,7 @@ describe( '<ATOForm /> rendering', () => {
     it( 'should render 1 input field ', () => {
         const wrapper = shallow( <ATOForm /> );
         const inputField = wrapper.find( Form );
-        expect( inputField ).toHaveLength( 1 );
+        expect( inputField ).toHaveLength( 0 );
 
     } );
 } );

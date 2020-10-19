@@ -7,6 +7,7 @@ import { ModalWrapper, TextInput } from 'carbon-components-react';
 // Next wrap the test suite in a describe
 describe( '<Launch /> rendering', () => {
     const wrapper = shallow( <Launch /> );
+    expect( wrapper ).toMatchSnapshot();
     it( 'should render a <ModalWrapper /> to display additional options', () => {
         expect( wrapper.find( ModalWrapper ) ).toHaveLength( 0 );
     } );

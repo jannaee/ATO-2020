@@ -1,37 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ATOForm /> rendering should render 1 form   1`] = `
-<Form
-  className="someForm"
->
-  <h4
-    className="title"
-  >
-    Our Test Subject
-  </h4>
-  <div
-    style={
-      Object {
-        "marginBottom": "2rem",
-      }
-    }
-  >
-    <ForwardRef(TextInput)
-      disabled={false}
-      helperText=""
-      id="test2"
-      inline={false}
-      invalid={false}
-      invalidText="Invalid error message."
-      labelText="First input field"
-      light={false}
-      onChange={[Function]}
-      onClick={[Function]}
-      placeholder="Placeholder text"
-      type="text"
-      warn={false}
-      warnText=""
-    />
-  </div>
-</Form>
-`;
+exports[`<ATOForm /> rendering should render 1 form   1`] = `""`;

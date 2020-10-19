@@ -1,19 +1,21 @@
 {
   "jest": {
     "collectCoverage": true,
-    "coverageDirectory": "reports",
+    "coverageDirectory": "reports/client",
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
-    "coverageReporters": ["text", "html", "text-summary", "json", "lcov"],
+    "coverageReporters": [
+      "text"
+    ],
     "coverageThreshold": {
       "global": {
         "lines": 100,
         "statements": 100,
-        "functions" : 100
+        "functions": 100
       }
     }
   },
@@ -26,6 +28,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "carbon-components": "^10.22.0",
     "carbon-components-react": "^7.22.0",
     "carbon-icons": "^7.0.7",
@@ -38,7 +41,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --collectCoverage --bail[=false] -u",
+    "test": "jest --collectCoverage --bail[=false] -u --setupFiles ./src/setupTests.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

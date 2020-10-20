@@ -1,9 +1,5 @@
-// https://github.com/FormidableLabs/enzyme-matchers/tree/master/packages/jest-enzyme#jest-enzyme-environment
-// import 'jest-enzyme';
-// import { configure } from 'enzyme';
-// import Adapter from 'enzyme-adapter-react-16';
-// configure({ adapter: new Adapter() });
-
+//This is not the set up recommended from the enzyme documentation
+// I did this to get rid of some errors
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 Enzyme.configure({ adapter: new Adapter() });

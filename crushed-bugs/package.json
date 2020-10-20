@@ -41,7 +41,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --collectCoverage --bail[=false] -u --setupFiles ./src/setupTests.js",
+    "test": "jest --collectCoverage -u --setupFiles ./src/setupTests.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

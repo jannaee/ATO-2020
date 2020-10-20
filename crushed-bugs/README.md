@@ -27,42 +27,79 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Errors 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I encountered a few errors with the setup that was recommended through Jest Enzyme and React. Here is a list of workarounds which lead me to what you see in this repo now.
+```Enzyme Internal Error: Enzyme expects an adapter to be configured, but found none.
+          To configure an adapter, you should call `Enzyme.configure({ adapter: new Adapter() })`
+          before using any of Enzyme's top level APIs, where `Adapter` is the adapter
+          corresponding to the library currently being tested. For example:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+          import Adapter from 'enzyme-adapter-react-15';```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Followed by
+```Cannot find module 'jest-enzyme' from 'setupTests.js'```
 
-## Learn More
+Instead of setupTests.js (I did not use a jest.config)
+// https://github.com/FormidableLabs/enzyme-matchers/tree/master/packages/jest-enzyme#jest-enzyme-environment
+// import 'jest-enzyme';
+// import { configure } from 'enzyme';
+// import Adapter from 'enzyme-adapter-react-16';
+// configure({ adapter: new Adapter() });
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Use this
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+Enzyme.configure({ adapter: new Adapter() });
+In the Package.json file
+Add to scripts
+    "test": "jest --collectCoverage --bail[=false] -u --setupFiles ./src/setupTests.js",
 
-### Code Splitting
+Place jest toward top as a top level and add
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
+To resolve the error:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+    ```Jest encountered an unexpected token
 
-### Deployment
+    This usually means that you are trying to import a file which Jest cannot parse, e.g. it's not plain JavaScript.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+    By default, if Jest sees a Babel config, it will use that to transform your files, ignoring "node_modules".
 
-### `yarn build` fails to minify
+    Here's what you can do:
+     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/en/configuration.html```
+
+Add a .babelrc file with this
+```{
+    "env": {
+        "development": {
+            "plugins": ["transform-es2015-modules-commonjs"]
+        },
+        "test": {
+            "plugins": ["transform-es2015-modules-commonjs", "@babel/plugin-proposal-class-properties"],
+            "presets": [
+                "@babel/preset-react"
+            ]
+        }
+    }
+}```
+
+Followed with installing this dependency
+```npm i babel-plugin-transform-es2015-modules-commonjs```
+
+
+
